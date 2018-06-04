@@ -1,17 +1,13 @@
 package com.jy.shop.manager.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jy.shop.manager.dao.CategoryMapper;
 import com.jy.shop.manager.service.CategoryService;
 import com.jy.shop.pojo.Category;
 
 @Service
-public class CategoryServiceImpl implements CategoryService {
-
+public class CategoryServiceImpl extends BaseServiceImpl<Category> implements CategoryService {
+/*
 	@Autowired
 	private CategoryMapper categoryMapper;
 	
@@ -25,5 +21,5 @@ public class CategoryServiceImpl implements CategoryService {
 		return categoryMapper.select(null);
 	}
 	
-	
+	*/
 }

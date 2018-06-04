@@ -9,14 +9,14 @@
 	<artifactId>shop-manager-dao</artifactId>
 
 	<dependencies>
-
+	
 		<!-- 依赖 pojo -->
 		<dependency>
 			<groupId>com.jy.shop</groupId>
 			<artifactId>shop-manager-pojo</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
+	
 		<!-- Mybatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -32,13 +32,13 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
-
+	
 		<!-- 连接池 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
 		</dependency>
-
+	
 	</dependencies>
 
 

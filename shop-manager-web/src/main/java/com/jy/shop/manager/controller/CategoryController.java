@@ -23,7 +23,12 @@ public class CategoryController {
 	@ResponseBody
 	public List<Category> searchList(){
 		
-		List<Category> list = categoryService.queryList();
+		List<Category> list = null;
+		try {
+			list = categoryService.queryByCondition(null);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		return list;
 	}

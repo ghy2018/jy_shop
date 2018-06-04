@@ -6,12 +6,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.jy.shop.manager.dao.UserMapper;
 import com.jy.shop.manager.service.CategoryService;
-import com.jy.shop.manager.service.UserService;
 import com.jy.shop.pojo.Category;
 import com.jy.shop.pojo.User;
 
 public class SpringTest {
-/*
+	/*
 	@Test
 	public void testDao(){
 		ApplicationContext ac = new ClassPathXmlApplicationContext("classpath:spring/spring-dao.xml");
@@ -22,8 +21,9 @@ public class SpringTest {
 		user.setPhone("13456789012");
 		user.setEmail("cc@163.com");
 		um.insert(user);
+		//um.insertSelective(record)
 	}
-	
+		
 	@Test
 	public void testService(){
 		ApplicationContext ac = new ClassPathXmlApplicationContext("classpath:spring/spring-*.xml");

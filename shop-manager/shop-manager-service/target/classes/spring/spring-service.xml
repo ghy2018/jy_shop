@@ -27,5 +27,7 @@
 	 -->
 	<dubbo:service interface="com.jy.shop.manager.service.CategoryService"
 		ref="categoryServiceImpl" timeout="1000000"/>
+	<dubbo:service interface="com.jy.shop.manager.service.ProductService"
+		ref="productServiceImpl" timeout="1000000"/>
 
 </beans>

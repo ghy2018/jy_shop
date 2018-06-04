@@ -42,7 +42,6 @@
 		<json.version>20160212</json.version>
 		<fastdfs_client.version>1.25</fastdfs_client.version>
 	</properties>
-
 	
 	<dependencyManagement>
 		<dependencies>

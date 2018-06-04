@@ -112,4 +112,15 @@ public class Content implements Serializable {
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Content [id=" + id + ", categoryId=" + categoryId + ", title=" + title + ", subTitle=" + subTitle
+				+ ", titleDesc=" + titleDesc + ", url=" + url + ", pic=" + pic + ", pic2=" + pic2 + ", content="
+				+ content + "]";
+	}
+    
+    
+    
+    
 }

@@ -57,4 +57,12 @@ public class ContentCategory implements Serializable {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+	@Override
+	public String toString() {
+		return "ContentCategory [id=" + id + ", parentId=" + parentId + ", name=" + name + ", status=" + status + "]";
+	}
+    
+    
+    
 }

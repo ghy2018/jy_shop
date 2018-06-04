@@ -31,7 +31,7 @@
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">商品卖点：</label>
 					<div class="formControls col-xs-8 col-sm-9">
-						<input type="text" class="input-text" value="" placeholder="填入销售热点" id="sellpoint" name="sellpoint">
+						<input type="text" class="input-text" value="" placeholder="填入销售热点" id="sellpoint" name="sellPoint">
 					</div>
 				</div>
 				<div class="row cl">
@@ -289,6 +289,7 @@ function article_save_submit(){
 	   url: "/restful/page/product",
 	   data: $("#form-article-add").serialize(),
 	   success: function(msg){
+		   //boolean
 		   layer.msg('新增商品成功!',{icon:1,time:1000});
 	   },
 	   error: function(){

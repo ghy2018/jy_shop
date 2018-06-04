@@ -211,4 +211,15 @@ public class Category implements Serializable {
     public void setTouchIcon(String touchIcon) {
         this.touchIcon = touchIcon == null ? null : touchIcon.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + ", parentId=" + parentId + ", sortOrder=" + sortOrder
+				+ ", showInNav=" + showInNav + ", isShow=" + isShow + ", grade=" + grade + ", filterAttr=" + filterAttr
+				+ ", isTopStyle=" + isTopStyle + ", topStyleTpl=" + topStyleTpl + ", styleIcon=" + styleIcon
+				+ ", catIcon=" + catIcon + ", isTopShow=" + isTopShow + ", categoryLinks=" + categoryLinks
+				+ ", categoryTopic=" + categoryTopic + ", catAliasName=" + catAliasName + ", commissionRate="
+				+ commissionRate + ", touchIcon=" + touchIcon + "]";
+	}
+    
 }

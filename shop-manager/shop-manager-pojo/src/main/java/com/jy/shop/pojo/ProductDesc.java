@@ -33,4 +33,11 @@ public class ProductDesc implements Serializable {
     public void setProductDesc(String productDesc) {
         this.productDesc = productDesc == null ? null : productDesc.trim();
     }
+
+	@Override
+	public String toString() {
+		return "ProductDesc [id=" + id + ", productDesc=" + productDesc + "]";
+	}
+    
+    
 }

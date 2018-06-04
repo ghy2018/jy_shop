@@ -101,4 +101,12 @@ public class Product implements Serializable {
     public void setStatus(Boolean status) {
         this.status = status;
     }
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", title=" + title + ", sellPoint=" + sellPoint + ", price=" + price + ", num="
+				+ num + ", image=" + image + ", cid=" + cid + ", status=" + status + "]";
+	}
+    
+    
 }
