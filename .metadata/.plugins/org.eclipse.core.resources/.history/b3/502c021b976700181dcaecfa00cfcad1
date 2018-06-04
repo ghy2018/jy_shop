@@ -1,0 +1,7 @@
+package com.jy.shop.manager.service.impl;
+
+import com.jy.shop.manager.service.BaseService;
+
+public class BaseServiceImpl implements BaseService<T> {
+
+}

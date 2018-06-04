@@ -1,0 +1,76 @@
+package com.jy.shop.manager.service.impl;
+
+import java.util.List;
+
+import com.jy.shop.manager.service.ProductService;
+import com.jy.shop.pojo.Product;
+
+public class ProductServiceImpl extends BaseServiceImpl<T> implements ProductService {
+
+	@Override
+	public boolean add(Product t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean addSelective(Product t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean removeById(Long id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean removeIds(List<Object> ids) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean modify(Product t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean modifySelective(Product t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Product queryById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> queryByCondition(Product t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> queryByPage(Product t, Integer pageNum, Integer pageSize) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product queryOne(Product t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int queryCount(Product t) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

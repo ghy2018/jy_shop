@@ -1,0 +1,6 @@
+com\jy\shop\manager\dao\ProductDescMapper.class
+com\jy\shop\manager\dao\ContentMapper.class
+com\jy\shop\manager\dao\ProductMapper.class
+com\jy\shop\manager\dao\UserMapper.class
+com\jy\shop\manager\dao\CategoryMapper.class
+com\jy\shop\manager\dao\ContentCategoryMapper.class

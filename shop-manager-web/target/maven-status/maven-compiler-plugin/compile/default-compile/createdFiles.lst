@@ -1,0 +1,4 @@
+com\jy\shop\manager\controller\PageController.class
+com\jy\shop\manager\controller\CategoryController.class
+com\jy\shop\manager\controller\ProductController.class
+com\jy\shop\manager\controller\FileUploadController.class

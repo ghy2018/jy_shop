@@ -1,0 +1,27 @@
+package com.jy.shop.manager.controller;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
+
+@Controller
+public class FileUploadController {
+
+	//http://localhost:9002/restful/file/upload
+	@PostMapping("/file/upload")
+	public Map<String,Object> uploadFile(MultipartFile file){
+		
+		
+		
+		
+		
+		
+		Map<String,Object> map = new HashMap<>();
+		return map;
+	}
+	
+	
+}
