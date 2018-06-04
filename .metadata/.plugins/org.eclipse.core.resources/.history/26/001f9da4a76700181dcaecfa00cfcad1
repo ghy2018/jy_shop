@@ -1,8 +1,0 @@
-package com.jy.shop.manager.service.impl;
-
-import com.jy.shop.manager.service.ProductService;
-import com.jy.shop.pojo.Product;
-
-public class ProductServiceImpl extends BaseServiceImpl<Product> implements ProductService {
-
-}
