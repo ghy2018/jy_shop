@@ -31,7 +31,7 @@ public class FileUploadController {
 		
 		////获取项目所在的真实路径
 		String projectPath = System.getProperty("user.dir");
-		ClientGlobal.init(projectPath + "/src/main/resources/propeties/tracker_server.conf");
+		ClientGlobal.init(projectPath + "/src/main/resources/properties/tracker_server.conf");
 		//创建一个TrackerClient对象
 		TrackerClient trackerClient = new TrackerClient();
 		//通过TrackClient的 getConnection()方法 获得一个TrackerServer对象
@@ -44,7 +44,7 @@ public class FileUploadController {
 		String[] strings = storageClient.upload_file(bytes, suffixName, null);
 		//String[] strings = storageClient.upload_file(path, "jpg", null);
 		
-		String filePath = "http://192.168.6.155";
+		String filePath = "http://192.168.4.152";
 		
 		for (String str : strings) {
 			filePath += "/" + str;

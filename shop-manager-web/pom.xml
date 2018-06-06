@@ -9,92 +9,99 @@
 	<artifactId>shop-manager-web</artifactId>
 	<packaging>war</packaging>
 
-<dependencies>
+	<dependencies>
 
-	<!-- 导入fastdfs客户端的依赖 -->
-	<dependency>
-		<groupId>com.alibaba.fastdfs</groupId>
-  		<artifactId>fastdfs_client</artifactId>
-	</dependency>
+		<!-- 单元测试 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 
-	<dependency>
-		<groupId>com.jy.shop</groupId>
-		<artifactId>shop-manager-interface</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</dependency>
+		<!-- 导入fastdfs客户端的依赖 -->
+		<dependency>
+			<groupId>com.alibaba.fastdfs</groupId>
+			<artifactId>fastdfs_client</artifactId>
+		</dependency>
 
-	<!-- Spring -->
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-webmvc</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-jdbc</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-aspects</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-context-support</artifactId>
-	</dependency>
-	<!-- JSP相关 -->
-	<dependency>
-		<groupId>jstl</groupId>
-		<artifactId>jstl</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>servlet-api</artifactId>
-		<scope>provided</scope>
-	</dependency>
-	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>jsp-api</artifactId>
-		<scope>provided</scope>
-	</dependency>
-	<!-- 文件上传组件 -->
-	<dependency>
-		<groupId>commons-fileupload</groupId>
-		<artifactId>commons-fileupload</artifactId>
-	</dependency>
-	
-	<dependency>
-		<groupId>com.baidu</groupId>
-		<artifactId>ueditor</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>org.json</groupId>
-		<artifactId>json</artifactId>
-	</dependency>
+		<dependency>
+			<groupId>com.jy.shop</groupId>
+			<artifactId>shop-manager-interface</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
-	<!-- dubbo相关 -->
-	<dependency>
-		<groupId>com.alibaba</groupId>
-		<artifactId>dubbo</artifactId>
-		<exclusions>
-			<exclusion>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring</artifactId>
-			</exclusion>
-			<exclusion>
-				<groupId>org.jboss.netty</groupId>
-				<artifactId>netty</artifactId>
-			</exclusion>
-		</exclusions>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.zookeeper</groupId>
-		<artifactId>zookeeper</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>com.github.sgroschupf</groupId>
-		<artifactId>zkclient</artifactId>
-	</dependency>
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<!-- JSP相关 -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- 文件上传组件 -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+		</dependency>
 
-</dependencies>
+		<dependency>
+			<groupId>com.baidu</groupId>
+			<artifactId>ueditor</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+		</dependency>
+
+		<!-- dubbo相关 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.jboss.netty</groupId>
+					<artifactId>netty</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.sgroschupf</groupId>
+			<artifactId>zkclient</artifactId>
+		</dependency>
+
+	</dependencies>
 
 	<build>
 		<plugins>

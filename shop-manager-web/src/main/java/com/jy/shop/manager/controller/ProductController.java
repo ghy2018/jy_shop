@@ -1,13 +1,16 @@
 package com.jy.shop.manager.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +29,11 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
+	/**
+	 * 新增商品
+	 * @param product
+	 * @return
+	 */
 	@ResponseBody
 	@PostMapping("/product")
 	public Boolean save(Product product){
@@ -38,7 +46,12 @@ public class ProductController {
 		return false;
 	}
 	
-	
+	/**
+	 * 商品列表展示
+	 * @param cid
+	 * @param aodata
+	 * @return
+	 */
 	//http://localhost:9002/restful/page/product/
 	@ResponseBody
 	@GetMapping("/product/")
@@ -47,8 +60,12 @@ public class ProductController {
 		
 		Integer sEcho = null;//当前访问的次数
 		
+		//最终要展示在页面上的集合的 起始下标 跟 条数
 		Integer iDisplayStart = 0;//起始下标
 		Integer iDisplayLength = 0;//每页显示条数
+		
+		//需要展示在页面上的集合
+		List<Product> aaData = null;
 		
 		if(null != aodata){
 			//把传递过来的json串转换成一个json对象
@@ -85,20 +102,23 @@ public class ProductController {
 		}
 		
 		//查询到的集合数据
-		List<Product> aaData = productService.queryByCondition(p);
+		List<Product> totalList = productService.queryByCondition(p);
 		
 		//查询的总记录数
-		Integer count = productService.queryCount(p);//3091
+		Integer count = productService.queryCount(p);//3094
+		
+		//一页展示几条数据   是由前端页面发送过来的
 		
 		//是否需要分页
 		if(count > iDisplayLength){
 			if(count - iDisplayStart > iDisplayLength){
 				//起始行下标   - 结束行下标
-				aaData = aaData.subList(iDisplayStart, iDisplayStart + iDisplayLength);
-				System.out.println(aaData.size());
+				aaData = totalList.subList(iDisplayStart, iDisplayStart + iDisplayLength);
+						//.subList(iDisplayStart, iDisplayStart + iDisplayLength);
+				System.out.println(totalList.size());
 			} else {
-				//不需要分页
-				aaData = aaData.subList(iDisplayStart, count);
+				//不需要分页,最后一页
+				aaData = totalList.subList(iDisplayStart, count);
 			}
 		} 
 		
@@ -110,5 +130,27 @@ public class ProductController {
 		
 		return result;
 	}
+
+	/**
+	 * 批量删除
+	 */
+	//http://manager.shop.com/restful/page/product
+	@ResponseBody
+	@DeleteMapping("/product")
+	public Boolean deleteMore(String ids){
+		try {
+			String[] idsStr = ids.split(",");
+			List<Object> list = new ArrayList<>();
+			for (int i = 0; i < idsStr.length; i++) {
+				list.add(idsStr[i]);
+			}
+			boolean flag = productService.removeIds(list);
+			return flag;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
 	
 }
