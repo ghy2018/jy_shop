@@ -48,7 +48,7 @@ var setting = {
 		simpleData: {
 			enable:true,
 			idKey: "id",
-			pIdKey: "parentid",
+			pIdKey: "parentId",
 			rootPId: ""
 		}
 	},
@@ -132,7 +132,7 @@ function retrieveData(sSource, aoData, fnCallback) {
 			"dataType" : "json",
 			"data" : {
 				"aodata" : JSON.stringify(aoData),
-				"categoryid" : vcid
+				"categoryId" : vcid
 			},
 			"success" : function(resp) {
 				fnCallback(resp);

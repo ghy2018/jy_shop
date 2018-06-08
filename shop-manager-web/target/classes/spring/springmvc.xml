@@ -47,6 +47,12 @@
 		id="categoryService" timeout="1000000"/>
 	<dubbo:reference interface="com.jy.shop.manager.service.ProductService" 
 		id="productService" timeout="1000000"/>
+	<dubbo:reference interface="com.jy.shop.manager.service.ContentCategoryService" 
+		id="contentCategoryService" timeout="1000000"/>
+	<dubbo:reference interface="com.jy.shop.manager.service.ContentService" 
+		id="contentService" timeout="1000000"/>
+	<dubbo:reference interface="com.jy.shop.common.jedis.JedisClient"
+		id="jedisClient" timeout="1000000"/>
 		
 
 </beans>

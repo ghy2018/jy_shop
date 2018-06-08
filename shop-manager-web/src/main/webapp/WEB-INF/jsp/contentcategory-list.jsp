@@ -53,7 +53,7 @@ var setting = {
 		simpleData: {
 			enable:true,
 			idKey: "id",
-			pIdKey : "parentid",
+			pIdKey : "parentId",
 			rootPId: ""
 		}
 	},
@@ -109,10 +109,13 @@ $(document).ready(function(){
 	});
 	var t = $("#treeDemo");
 	t = $.fn.zTree.init(t, setting, zNodes);
-	demoIframe = $("#testIframe");
+	//demoIframe = $("#testIframe");
 	//demoIframe.on("load", loadReady);
 	var zTree = $.fn.zTree.getZTreeObj("tree");
 	//zTree.selectNode(zTree.getNodeByParam("id",'6'));
+	
+	
+	
 });
 
 
@@ -125,7 +128,7 @@ $("#submitAndsave").click(function() {
         //data:{method:"ajaxTest",val:value}
         data: {
             name: $("#name").val(),
-            parentid: $("#cid").val(),
+            parentId: $("#cid").val(),
         },
         async: true,   //是否为异步请求
         cache: false,  //是否缓存结果
@@ -170,7 +173,7 @@ $("#submitDelete").click(function() {
 $("#submitUpdate").click(function() {
     var showname = $("#showname").val();
     if(showname==''){
-    	layer.msg('请选择要删除分类!',{icon:2,time:3000});
+    	layer.msg('请选择要修改分类!',{icon:2,time:3000});
     	return;
     }
 	layer.confirm('确认要修改该分类吗？',function(){

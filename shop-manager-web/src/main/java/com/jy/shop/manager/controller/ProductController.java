@@ -93,7 +93,7 @@ public class ProductController {
 				}
 			}
 			
-		}
+		} 
 		
 		Product p = new Product();
 		
@@ -120,7 +120,9 @@ public class ProductController {
 				//不需要分页,最后一页
 				aaData = totalList.subList(iDisplayStart, count);
 			}
-		} 
+		} else {
+			aaData = totalList;
+		}
 		
 		DataTableJSONResponse result = new DataTableJSONResponse();
 		result.setsEcho(sEcho);
