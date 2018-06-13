@@ -25,7 +25,7 @@
 				<div class="row cl">
 				<label class="form-label col-xs-4 col-sm-2">内容分类：</label>
 					<div class="formControls col-xs-8 col-sm-9">
-						<input  type="hidden" class="input-text" value="" id="categoryid" name="categoryid">
+						<input  type="hidden" class="input-text" value="" id="categoryId" name="categoryId">
 						<input  type="text" class="input-text" value="请从分类树选择分类" id="name" disabled="disabled">
 					</div>
 				</div>
@@ -38,13 +38,13 @@
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">子标题：</label>
 					<div class="formControls col-xs-8 col-sm-9">
-						<input type="text" name="subtitle" id="subtitle" placeholder="填入子标题" value="" class="input-text">
+						<input type="text" name="subTitle" id="subTitle" placeholder="填入子标题" value="" class="input-text">
 					</div>
 				</div>
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">标题描述：</label>
 					<div class="formControls col-xs-8 col-sm-9">
-						<input type="text" name="titledesc" id="titledesc" placeholder="填入标题描述" value="" class="input-text">
+						<input type="text" name="titleDesc" id="titleDesc" placeholder="填入标题描述" value="" class="input-text">
 					</div>
 				</div>
 				<div class="row cl">
@@ -119,7 +119,7 @@ var setting = {
 					return false;
 				} else {
 					//demoIframe.attr("src","kasg.jsp");
-					$("#categoryid").attr("value",  treeNode.id);
+					$("#categoryId").attr("value",  treeNode.id);
 					$("#name").attr("value",  treeNode.name);
 				
 					
@@ -239,8 +239,8 @@ var setting = {
 	
 //添加提交商品
 function article_save_submit(){
-	var categoryid = $("#categoryid").val();
-	if (categoryid=="") {
+	var categoryId = $("#categoryId").val();
+	if (categoryId=="") {
 		layer.msg('请选择内容分类!',{icon:2,time:3000});
 		return;
 	}

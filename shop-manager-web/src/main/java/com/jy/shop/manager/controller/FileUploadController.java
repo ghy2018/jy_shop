@@ -44,7 +44,7 @@ public class FileUploadController {
 		String[] strings = storageClient.upload_file(bytes, suffixName, null);
 		//String[] strings = storageClient.upload_file(path, "jpg", null);
 		
-		String filePath = "http://192.168.4.152";
+		String filePath = "http://192.168.4.153";
 		
 		for (String str : strings) {
 			filePath += "/" + str;

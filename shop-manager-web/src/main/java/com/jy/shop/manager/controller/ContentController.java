@@ -1,17 +1,19 @@
 package com.jy.shop.manager.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.jy.shop.common.DataTableJSONResponse;
 import com.jy.shop.manager.service.ContentService;
@@ -24,6 +26,52 @@ public class ContentController {
 	@Autowired
 	private ContentService contentService;
 	
+	/**
+	 * 批量删除
+	 * @param ids
+	 * @return
+	 */
+	//http://localhost:9002/restful/page/content
+	@DeleteMapping("/content")
+	@ResponseBody
+	public Boolean add(String ids) {
+		String[] strIds = ids.split(",");
+		List<Object> list = new ArrayList<>();
+		for (String id : strIds) {
+			list.add(id);
+		}
+		boolean flag = false;
+		try {
+			flag = contentService.removeIds(list);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
+	
+	/**
+	 * 新增内容
+	 * @param content
+	 * @return
+	 */
+	//http://localhost:9002/restful/page/content
+	@PostMapping("/content")	
+	@ResponseBody
+	public Boolean add(Content content) {
+		//System.out.println(content);
+		boolean flag = false;
+		try {
+			flag = contentService.add(content);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
+	
+	/**
+	 * 内容列表展示
+	 * 分页
+	 */
 	//http://localhost:9002/restful/page/content/
 	@GetMapping("/content")
 	@ResponseBody

@@ -1,0 +1,5 @@
+com\jy\shop\front\pojo\HttpResult.class
+com\jy\shop\front\controller\FrontUserController.class
+com\jy\shop\front\httpclient\IdleConnectionEvictor.class
+com\jy\shop\front\controller\IndexController.class
+com\jy\shop\front\service\HttpClientService.class
