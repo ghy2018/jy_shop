@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<context:property-placeholder location="classpath:properties/*.properties"/>
+
+	<!-- 配置包扫描器:只扫描 Controller 跟 ControllerAdvice 注解 -->
+	<context:component-scan base-package="com.jy.shop.front"/>
+
+	<!-- 配置视图解析器 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+
+	<!-- 注册注解形式的 处理器适配器 和 处理器映射器 -->
+	<mvc:annotation-driven />
+
+	<!-- 解决静态资源被 servletDispather 拦截的问题 -->
+	<mvc:default-servlet-handler />
+	
+	<!-- 配置文件上传的 MultipartResolver -->
+	<bean id="multipartResolver" 
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	     <property name="defaultEncoding" value="utf-8"></property>
+	     <property name="maxUploadSize" value="5242880"></property>
+	</bean>
+	
+	<!-- 拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<!-- 配置登录拦截器 -->
+			<mvc:mapping path="/order/**"/>
+			<bean class="com.jy.shop.front.intercetor.LoginInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	<!-- 引用dubbo服务 -->
+	<!-- <dubbo:application name="shop-front-web"/>
+	<dubbo:registry protocol="zookeeper" address="${zookeeper.info}" /> -->
+	<!-- 调用接口服务 
+		interface : 调用哪个接口
+		id : 给接口起个名字
+		check="false" 
+	-->
+	<!-- <dubbo:reference interface="com.jy.shop.manager.service.ContentService" 
+		id="contentService" timeout="1000000"/> -->
+	<!-- <dubbo:reference interface="com.jy.shop.manager.service.CategoryService" 
+		id="categoryService" timeout="1000000"/>
+	<dubbo:reference interface="com.jy.shop.manager.service.ProductService" 
+		id="productService" timeout="1000000"/>
+	<dubbo:reference interface="com.jy.shop.manager.service.ContentCategoryService" 
+		id="contentCategoryService" timeout="1000000"/>
+	<dubbo:reference interface="com.jy.shop.common.jedis.JedisClient"
+		id="jedisClient" timeout="1000000"/> -->
+		
+
+</beans>
