@@ -48,6 +48,9 @@ public class UserController {
 		return new ResponseEntity<>(false,HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
+	/**
+	 * 注册接口
+	 */
 	//http://localhost:9010/user/register
 	@PostMapping("/register")
 	@ResponseBody
@@ -64,14 +67,20 @@ public class UserController {
 		return new ResponseEntity<>(false,HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
-	
+	/**
+	 * 登录接口
+	 */
 	//http://localhost:9010/user/login
 	@PostMapping("/login")
 	@ResponseBody
-	public ResponseEntity<String> login(String username, String password){
+	public ResponseEntity<String> login(String userName, String pwd){
+		//注意: 使用 HttpClent 调用 doPost方法时，入参名称需要跟 JavaBean 参数对应，否则无法正确入参
+		System.out.println("UserController -- " + userName);
+		System.out.println("UserController == " + pwd);
+		
 		String ticket = null;
 		try {
-			ticket = userService.queryUserByUserName(username, password);
+			ticket = userService.queryUserByUserName(userName, pwd);
 			return new ResponseEntity<>(ticket,HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();

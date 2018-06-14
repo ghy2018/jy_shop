@@ -93,6 +93,7 @@ public class HttpClientService {
         HttpPost httpPost = new HttpPost(url);
         //设置请求参数
         httpPost.setConfig(requestConfig);
+        
         if (params != null) {
             List<NameValuePair> parameters = new ArrayList<>();
             for (String key : params.keySet()) {

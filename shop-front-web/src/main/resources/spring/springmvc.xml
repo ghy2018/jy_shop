@@ -34,6 +34,15 @@
 	     <property name="maxUploadSize" value="5242880"></property>
 	</bean>
 	
+	<!-- 拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<!-- 配置登录拦截器 -->
+			<mvc:mapping path="/order/**"/>
+			<bean class="com.jy.shop.front.intercetor.LoginInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
 	<!-- 引用dubbo服务 -->
 	<!-- <dubbo:application name="shop-front-web"/>
 	<dubbo:registry protocol="zookeeper" address="${zookeeper.info}" /> -->

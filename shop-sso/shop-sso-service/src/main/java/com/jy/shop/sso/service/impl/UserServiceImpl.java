@@ -71,8 +71,12 @@ public class UserServiceImpl implements UserService {
 	public String queryUserByUserName(String username, String password) throws Exception {
 		String ticket = null;
 		
+		System.out.println("---- " + username);
+		System.out.println("==== " + password);
+		
 		User user = new User();
 		user.setUserName(username);
+		System.out.println("user : " + user);
 		User u = userMapper.selectOne(user);
 		
 		if(null != u){
